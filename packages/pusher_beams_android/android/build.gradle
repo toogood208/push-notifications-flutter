@@ -2,7 +2,7 @@ group 'com.pusher.pusher_beams'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.5.30'
+    ext.kotlin_version = '1.8.22'
     repositories {
         google()
         mavenCentral()
@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
@@ -25,8 +25,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-     namespace "com.pusher.pusher_beams" 
-    compileSdkVersion 31
+    namespace "com.pusher.pusher_beams"
+    compileSdk 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -42,14 +42,13 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdk 16
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation("com.google.firebase:firebase-messaging:22.0.0")
-    implementation("com.google.firebase:firebase-iid:21.1.0")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation("com.google.firebase:firebase-messaging:23.3.0")
     implementation("com.pusher:push-notifications-android:1.10.0")
     testImplementation 'junit:junit:4.12'
 }
